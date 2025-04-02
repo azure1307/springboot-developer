@@ -72,6 +72,7 @@ public class TokenProvider {
 		return claims.get("id", Long.class);
 	}
 
+	//토큰 기반으로 클레임(내용 덩어리)를 가져오는 메서드
 	private Claims getClaims(String token) {
 		return Jwts.parser()
 			.setSigningKey(jwtProperties.getSecretKey())
