@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
-      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.h2.Driver
-      SPRING_DATASOURCE_USERNAME: sa
-      SPRING_DATASOURCE_PASSWORD:
-      SPRING_JPA_DEFER_DATASOURCE_INITIALIZATION: true
       JWT_ISSUER: ${{ secrets.JWT_ISSUER }}
       JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
       OAUTH2_GOOGLE_CLIENT_ID: ${{ secrets.OAUTH2_GOOGLE_CLIENT_ID }}
@@ -29,9 +24,6 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-
-      - name: Build with Gradle (with full logs)
-        run: ./gradlew clean build --stacktrace --info
 
       - name: Build with Gradle
         run: ./gradlew clean build
