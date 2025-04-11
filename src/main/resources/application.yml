@@ -19,11 +19,11 @@ spring:
       client:
         registration:
           google:
-            client-id: ${{ secrets.OAUTH2_GOOGLE_CLIENT_ID }}
-            client-secret: ${{ secrets.OAUTH2_GOOGLE_CLIENT_SECRET }}
+            client-id: ${OAUTH2_GOOGLE_CLIENT_ID}
+            client-secret: ${OAUTH2_GOOGLE_CLIENT_SECRET}
             scope:
               - email
               - profile
   jwt:
-    issuer: ${{ secrets.JWT_ISSUER }}
-    secret_key: ${{ secrets.JWT_SECRET_KEY }}
+    issuer: ${JWT_ISSUER}
+    secret_key: ${JWT_SECRET_KEY}
