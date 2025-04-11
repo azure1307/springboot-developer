@@ -12,18 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.test.context.TestPropertySource;
 
 import io.jsonwebtoken.Jwts;
 import me.shinsunyoung.springbootdeveloper.domain.User;
 import me.shinsunyoung.springbootdeveloper.repository.UserRepository;
 
 @SpringBootTest
-@TestPropertySource(properties = {
-	"jtw.issuer=limehyun15@gmail.com",
-	"jwt.secret-key=study-springboot",
-	"jwt.expire-seconds=3600"
-})
 public class TokenProviderTest {
 
 	@Autowired
